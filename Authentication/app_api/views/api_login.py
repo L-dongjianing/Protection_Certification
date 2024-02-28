@@ -29,7 +29,7 @@ def verify_user():
             dic_user = data[0] #用户信息
             new_data = dic_user
             new_data['present'] = ip
-            token = Jwt.encode(new_data, "77897159", EFFECTIVENESS)  #jwt生成
+            token = Jwt.encode(new_data, "7749", EFFECTIVENESS)  #jwt生成
             dic_user['tok'] = token.decode() #字节转字符串
             print('tok')
             print(dic_user['tok'])
@@ -62,7 +62,6 @@ def contact_register():
 
         else:
             uid = int(random.randint(111, 999)+int(time.time())/1000) #唯一uid
-            print('我当前在打印uid',uid)
             insert_pro =f'insert into {PROFILE} (uid,u_name) values ("{uid}","{username}")'
             role_verify_up(insert_pro)
             insert_au = f'insert into {AUTHENTICATE} (uid,u_name,u_passwd,name_md5,login_type,expiration,state,level) values ("{uid}","{username}","{password}","{str_md5(username)}",1,{expiration},1,2)'
@@ -70,13 +69,6 @@ def contact_register():
             return api_result(msg='注册成功',code=200)
     else:
         return  api_result(msg='缺少必要参数',code=401)
-
-@api_login.route('/demo/', methods=['POST'])
-def demo():
-    print('接口内部打印form')
-    print(request.form)
-    return api_result(msg='成功',code=200,data={'age':18,'name':'djn'})
-
 
 
 # ##钩子函数 (接口执行之后执行

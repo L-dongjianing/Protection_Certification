@@ -4,16 +4,10 @@ import time
 import redis
 CONCURRENT = 550 #10/分钟最大并发数
 REDIS_CONF_db14 = {
-    "redis_host": "r-0jltklkgko5keufkclpd.redis.rds.aliyuncs.com",  #
-    # "redis_host": "172.21.6.197",  #
-    "redis_passwd": "Xueyiyang!",  # 本机器未设置
-    "redis_port": 55379,
-    # > 数据库库名
-    # 搜索队列
-    "db_search": 1,
-
-    "db_other": 12,
-    "search_queue_status_key": "HotBoardAllNew"
+    "redis_host": "127.0.0.1",  # redis地址
+    "redis_passwd": "",  # 本地尚未设置
+    "redis_port": 6379,  #端口
+    "db_other": 14, #数据库库名
 }
 
 #链接redis

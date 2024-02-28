@@ -74,11 +74,10 @@ def before_request():
             #以下是判断token与ip是否一致
             ip = request.headers.get('Serialgate', '') #用户每次请求的ip
             token = request.headers.get('Publicprotect', '') #token
-            # print('打印ip',ip)
             if ip and token:
                 # print('进来了')
                 try: #解成功了
-                    token = Jwt.decode(token.encode('Utf-8'),"77897159") #token解析
+                    token = Jwt.decode(token.encode('Utf-8'),"7749") #token解析
                     # token = etoken) #字符串转字典
                     if str(token.get('present','')) != str(ip):
                         return  api_result(msg='登录失效、请重新登陆',code=401)

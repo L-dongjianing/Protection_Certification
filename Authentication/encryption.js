@@ -8,7 +8,7 @@ function randomString(length) {
 }
 
 var rr = randomString(16)
-const key = CryptoJS.enc.Utf8.parse("hexikejijiushinb");  //十六位十六进制数作为密钥
+const key = CryptoJS.enc.Utf8.parse("kr94ugk9oqaxcn80");  //十六位十六进制数作为密钥
 const iv = CryptoJS.enc.Utf8.parse(rr);   //十六位十六进制数作为密钥偏移量
 
 var Untie = {
